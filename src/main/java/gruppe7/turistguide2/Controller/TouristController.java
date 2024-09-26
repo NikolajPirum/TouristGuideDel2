@@ -2,16 +2,13 @@ package gruppe7.turistguide2.Controller;
 
 import gruppe7.turistguide2.Model.Tourist;
 import gruppe7.turistguide2.Service.TouristService;
-import org.springframework.http.HttpStatus;
-import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @Controller
-@RequestMapping("/attractions")
+@RequestMapping("")
 public class TouristController {
 
     public final TouristService touristService;
@@ -52,7 +49,7 @@ public class TouristController {
         return "addAttraction";
     }
     @PostMapping("/save")
-    public String saveAttraction(@ModelAttribute Tourist attraction){;
+    public String saveAttraction(@ModelAttribute Tourist attraction){
         touristService.AddAttractionsList(attraction);
         return "redirect:/attractions";
         }
