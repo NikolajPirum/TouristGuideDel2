@@ -51,7 +51,7 @@ public class TouristController {
     @PostMapping("/save")
     public String saveAttraction(@ModelAttribute Tourist attraction){
         touristService.AddAttractionsList(attraction);
-        return "redirect:/attractions";
+        return "redirect:/";
         }
 
 
@@ -61,7 +61,7 @@ public class TouristController {
         if(attraction != null) {
             touristService.deleteAttraction(attraction);
         }
-        return "redirect:/attractions";
+        return "redirect:/";
     }
 
     // Viser formular til at opdatere en attraktion
@@ -78,7 +78,7 @@ public class TouristController {
     @PostMapping("/update")
     public String updateAttraction(@ModelAttribute Tourist attraction) {
         touristService.updateAttraction(attraction);
-        return "redirect:/attractions"; // Omdiriger til listen over attraktioner
+        return "redirect:/"; // Omdiriger til listen over attraktioner
     }
 
 }
