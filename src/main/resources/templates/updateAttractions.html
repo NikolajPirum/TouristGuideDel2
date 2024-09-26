@@ -9,7 +9,7 @@
 
 <h1>Opdater Attraktion</h1>
 
-<form th:action="@{/attractions/update}" th:object="${attraction}" method="post">
+<form th:action="@{/update}" th:object="${attraction}" method="post">
     <label for="name">Navn:</label>
     <input type="text" id="name" th:field="*{name}" readonly="readonly"/>
 
@@ -36,7 +36,7 @@
 
 <br>
 
-<a href="/attractions">Tilbage til listen</a>
+<a href="/">Tilbage til listen</a>
 
 </body>
 </html>

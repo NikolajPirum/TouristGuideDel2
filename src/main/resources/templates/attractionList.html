@@ -25,7 +25,7 @@
     <tr th:each="attraction : ${attractions}" >
 
         <td>
-            <a th:href="@{'/attractions/' + ${attraction.name}}" th:text="${attraction.name}"></a>   <!-- Navn -->
+            <a th:href="@{${attraction.name}}" th:text="${attraction.name}"></a>   <!-- Navn -->
         </td>
 
         <td>
@@ -37,19 +37,19 @@
         </td>
 
         <td>
-            <form th:action="@{'/attractions/' + ${attraction.name} + '/edit'}"  method="GET">
+            <form th:action="@{${attraction.name} + '/edit'}"  method="GET">
             <input type="submit" value="Opdater">
             </form>
         </td>
 
         <td>
-            <form th:action="@{'/attractions/' + ${attraction.name} + '/delete'}" method="POST">
+            <form th:action="@{${attraction.name} + '/delete'}" method="POST">
                 <input type="submit" value="Slet">
             </form>
         </td>
 
         <td>
-            <form th:action="@{'/attractions/' + ${attraction.name} + '/tags'}" method="GET">
+            <form th:action="@{${attraction.name} + '/tags'}" method="GET">
             <input type="submit" value="Tags">
             </form>
         </td>
@@ -59,7 +59,7 @@
 
 <br>
 
-<form th:action="@{'/attractions' + '/add'}" method="GET">
+<form th:action="@{'/add'}" method="GET">
 <input type="submit" value="Tilføj attraktion">
 </form>
 
