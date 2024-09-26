@@ -17,12 +17,17 @@ public class TouristController {
         this.touristService = touristService;
     }
 
-    @GetMapping("/attractions")
+    @GetMapping()
     public String getAllAttractions(Model model) {
         List<Tourist> allAttractions = touristService.getAllAttractions();
         model.addAttribute("attractions", allAttractions);
         return "attractionList";
     }
+    @RequestMapping("/")
+    public String redirect(){
+        return "redirect:/attractionList";
+    }
+
 
     @GetMapping("/{name}")
     public String getAttraction(@PathVariable("name") String name, Model model) {
